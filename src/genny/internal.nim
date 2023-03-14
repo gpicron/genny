@@ -13,7 +13,7 @@ proc exportEnumInternal*(sym: NimNode) =
 proc exportProcInternal*(
   sym: NimNode,
   owner: NimNode = nil,
-  prefixes: openarray[NimNode] = []
+  prefixes: seq[NimNode] = @[]
 ) =
   let
     procName = sym.repr
