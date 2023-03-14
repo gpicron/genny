@@ -248,7 +248,7 @@ proc exportSeqInternal*(sym: NimNode) =
   generateSeqs(sym)
 
 const header = """
-when not defined(gcArc) and not defined(gcOrc):
+when not compileOption("gc", "arc") and not compileOption("gc", "orc"):
   {.error: "Please use --gc:arc or --gc:orc when using Genny.".}
 
 when (NimMajor, NimMinor, NimPatch) == (1, 6, 2):
